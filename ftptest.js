@@ -5,8 +5,8 @@ var c = new Client();
 
 //ready close(< boolean >hadErr) end error(< Error >err)
 
-/*
 
+/*
 //list files
 c.on('ready', function() {
   c.list(function(err, list) {
@@ -17,13 +17,14 @@ c.on('ready', function() {
 });
 */
 
-/*
+
 //download
+/*
 c.on('ready', function() {
-  c.get('develop/info.txt', function(err, stream) {
+  c.get('foo.remote-copy.txt', function(err, stream) {
     if (err) throw err;
     stream.once('close', function() { c.end(); });
-    stream.pipe(fs.createWriteStream('foo.local-copy.txt'));
+    stream.pipe(fs.createWriteStream('b.txt'));
   });
 });
 */
@@ -31,11 +32,13 @@ c.on('ready', function() {
 /*
 //upload
 c.on('ready', function() {
-  c.put('foo.txt', 'foo.remote-copy.txt', function(err) {
+  c.put('a.txt', 'foo.remote-copy.txt', function(err) {
     if (err) throw err;
     c.end();
   });
 });
+
+
 */
 
 
