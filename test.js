@@ -43,7 +43,6 @@ http.createServer(function(req, res){
 		c.on('ready', function() {
 		  c.list(function(err, list) {
 		    if (err) throw err;
-		    console.log(list);
 		    var names= '';
 		    for(var i in list)
 		    {
@@ -64,7 +63,7 @@ http.createServer(function(req, res){
 		c.connect(config);
 		c.on('ready', function() {
 		  	var local_file = ourl.local_file;
-		    var remote_file = orul.remote_file;
+		    var remote_file = ourl.remote_file;
 			c.get(remote_file, function(err, stream) {
 				if (err) throw err;
 				console.log(stream);
@@ -80,7 +79,7 @@ http.createServer(function(req, res){
 		c.connect(config);
 		c.on('ready', function() {
 		  var local_file = ourl.local_file;
-		  var remote_file = orul.remote_file;
+		  var remote_file = ourl.remote_file;
 		  c.put(local_file, remote_file, function(err) {
 		    if (err) throw err;
 		    c.end();
